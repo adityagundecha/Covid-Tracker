@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.tabPanel{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+.tab2 {
+    width: 100px;
+}

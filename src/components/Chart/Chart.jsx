@@ -22,13 +22,20 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 datasets: [{
                     data: dailyData.map(({ confirmed }) => confirmed),
                     label: 'Infected',
-                    borderColor: '#3333ff',
+                    borderColor: 'magenta',
+                    backgroundColor: 'rgba(255,0,255,0.1)',
                     fill: true,
                 }, {
                     data: dailyData.map(({ deaths }) => deaths),
                     label: 'Deaths',
                     borderColor: 'red',
                     backgroundColor: 'rgba(255,0,0,0.5)',
+                    fill: true,
+                }, {
+                    data: dailyData.map(({ active }) => active),
+                    label: 'Active',
+                    borderColor: 'black',
+                    backgroundColor: 'rgba(0,0,0,0.1)',
                     fill: true,
                 }],
             }}
@@ -49,12 +56,12 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                                 'rgba(0,255,0,0.5)',
                                 'rgba(255,0,0,0.5)',
                             ],
-                            data: [confirmed.value, recovered.value, deaths.value],
+                            data: [confirmed.value, recovered.value, deaths.value, confirmed],
                         },
                     ],
                 }}
                 options={{
-                    legend: { display: false },
+                    legend: { display: true },
                     title: { display: true, text: `Current State in ${country}` },
                 }}
             />

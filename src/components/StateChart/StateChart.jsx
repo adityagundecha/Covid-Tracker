@@ -44,8 +44,8 @@ const StateChart = ({ chartData }, { state1 }) => {
                     {
                         data: dailyData.map(({ recovered }) => recovered),
                         label: 'Recovered',
-                        borderColor: 'red',
-                        backgroundColor: 'rgba(0,250,0,0.5)',
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0,250,0,0.2)',
                         fill: true,
                     },
                 ],
